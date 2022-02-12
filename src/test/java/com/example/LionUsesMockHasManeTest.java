@@ -6,19 +6,19 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.junit.runners.Parameterized;
 
+
+
 @RunWith(Parameterized.class)
-public class LionUsesMockTest extends TestCase {
+public class LionUsesMockHasManeTest extends TestCase {
+   @Mock
+    private Feline feline;
 
     private final String sexLion;
     private final boolean expectedHasMane;
 
-    @Mock
-    Feline feline;
-
-    public LionUsesMockTest(String sexLion, boolean expectedHasMane) {
+    public LionUsesMockHasManeTest(String sexLion, boolean expectedHasMane) {
         this.sexLion = sexLion;
         this.expectedHasMane = expectedHasMane;
-
     }
 
     @Parameterized.Parameters
@@ -30,12 +30,12 @@ public class LionUsesMockTest extends TestCase {
     }
 
     @Test
-    public void shouldBeDoesHaveMane() throws Exception {
+    public void shouldDoesHaveManeTest() throws Exception {
        Lion lion = new Lion(this.sexLion,this.feline);
-            boolean actualHasMane = lion.doesHaveMane();
 
-        assertEquals(this.expectedHasMane, actualHasMane);
+       boolean actualHasMane = lion.doesHaveMane();
+
+       assertEquals(this.expectedHasMane, actualHasMane);
     }
-
 
 }
