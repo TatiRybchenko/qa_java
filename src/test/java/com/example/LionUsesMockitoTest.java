@@ -6,12 +6,11 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.Collections;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class LionGetKittensGetFoodMockitoTest extends TestCase {
+public class LionUsesMockitoTest extends TestCase {
 
     @Mock
     private Feline feline;
@@ -24,7 +23,7 @@ public class LionGetKittensGetFoodMockitoTest extends TestCase {
 
         int actualKittens = lion.getKittens();
 
-        assertEquals(expectedKittens, actualKittens);
+        assertEquals("Некорректное количество котят у Льва, не равное 1", expectedKittens, actualKittens);
     }
 
     @Test
@@ -35,6 +34,6 @@ public class LionGetKittensGetFoodMockitoTest extends TestCase {
 
         List<String> actualFood = lion.getFood();
 
-        assertEquals(expectedFood, actualFood);
+        assertEquals("Некорректный вид животного, не Хищник", expectedFood, actualFood);
     }
 }

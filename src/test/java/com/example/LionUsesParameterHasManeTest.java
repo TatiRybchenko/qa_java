@@ -3,20 +3,17 @@ package com.example;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.junit.runners.Parameterized;
 
 
-
 @RunWith(Parameterized.class)
-public class LionUsesMockHasManeTest extends TestCase {
-   @Mock
-    private Feline feline;
+public class LionUsesParameterHasManeTest extends TestCase {
 
+    private Feline feline;
     private final String sexLion;
     private final boolean expectedHasMane;
 
-    public LionUsesMockHasManeTest(String sexLion, boolean expectedHasMane) {
+    public LionUsesParameterHasManeTest(String sexLion, boolean expectedHasMane) {
         this.sexLion = sexLion;
         this.expectedHasMane = expectedHasMane;
     }
@@ -30,12 +27,13 @@ public class LionUsesMockHasManeTest extends TestCase {
     }
 
     @Test
-    public void shouldDoesHaveManeTest() throws Exception {
+    public void shouldDoesHaveMane() throws Exception {
        Lion lion = new Lion(this.sexLion,this.feline);
 
        boolean actualHasMane = lion.doesHaveMane();
 
-       assertEquals(this.expectedHasMane, actualHasMane);
+       assertEquals("Некорректное соотношение гривы и пола животного", this.expectedHasMane, actualHasMane);
     }
+
 
 }

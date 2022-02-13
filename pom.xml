@@ -62,12 +62,9 @@
                 <version>0.8.7</version>
                 <executions>
                     <execution>
-                        <!--id выбираешь самостоятельно-->
-                        <id>prepare-agent</id>
-                        <!--в какой фазе maven будет выполняться цель-->
-                        <phase>initialize</phase>
-                        <!--цель jacoco, которую нужно выполнить-->
-                        <goals>
+                         <id>prepare-agent</id>
+                         <phase>initialize</phase>
+                          <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
