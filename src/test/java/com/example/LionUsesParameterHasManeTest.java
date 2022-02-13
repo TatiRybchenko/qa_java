@@ -1,9 +1,11 @@
 package com.example;
 
 import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
 
 
 @RunWith(Parameterized.class)
@@ -13,6 +15,7 @@ public class LionUsesParameterHasManeTest extends TestCase {
     private final String sexLion;
     private final boolean expectedHasMane;
 
+
     public LionUsesParameterHasManeTest(String sexLion, boolean expectedHasMane) {
         this.sexLion = sexLion;
         this.expectedHasMane = expectedHasMane;
@@ -21,8 +24,10 @@ public class LionUsesParameterHasManeTest extends TestCase {
     @Parameterized.Parameters
     public static Object[][] getSex() {
         return new Object[][] {
-                { "Самец", true},
-                { "Самка", false},
+                {"Самец", true},
+                {"Самка", false},
+                {"Мужской", true},
+                {"Женский", false},
         };
     }
 
@@ -34,6 +39,9 @@ public class LionUsesParameterHasManeTest extends TestCase {
 
        assertEquals("Некорректное соотношение гривы и пола животного", this.expectedHasMane, actualHasMane);
     }
+
+
+
 
 
 }

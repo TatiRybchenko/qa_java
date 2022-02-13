@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+
+
 @RunWith(MockitoJUnitRunner.class)
 public class CatGetSoundTest extends TestCase {
 
@@ -22,7 +24,7 @@ public class CatGetSoundTest extends TestCase {
         assertEquals("Звук отличается от Мяу", expectedSound, actualSound);
     }
 
- //   @Test
- //  public void shouldGetFoodReturnsCorrectList() {
-
+    // Тест для Cat c методом List<String> getFood() так и не поняла, что он делает и относительно чего его можно проверить.
+    // Уже голову сломала, но так и не нашла решение.
+    // Т.е получает через интерфейс Predator пустой список  List<String> eatMeat() и зачем?
 }

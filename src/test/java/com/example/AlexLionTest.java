@@ -14,19 +14,19 @@ public class AlexLionTest extends TestCase {
   @Mock
   Feline feline;
 
-@Test
-     public void shouldGetKittensReturnsCorrectValueNull() throws Exception  {
-     AlexLion alexLion = new AlexLion ("Самец", feline,"Алекс");
-     int expectedKittensAlex = 0;
+    @Test
+    public void shouldGetKittensReturnsCorrectValueNull() throws Exception  {
+        AlexLion alexLion = new AlexLion ("Самец", feline);
+        int expectedKittensAlex = 0;
 
-    int actualKittensAlex = alexLion.getKittens();
+        int actualKittensAlex = alexLion.getKittens();
 
-    assertEquals("Некорректное количество котят у Льва Алекса, не равное 0", expectedKittensAlex, actualKittensAlex);
+        assertEquals("Некорректное количество котят у Льва Алекса, не равное 0", expectedKittensAlex, actualKittensAlex);
       }
 
     @Test
     public void shouldGetPlaceOfLivingReturnsCorrectValueZoo() throws Exception {
-        AlexLion alexLion = new AlexLion ("Самец", feline,"Алекс");
+        AlexLion alexLion = new AlexLion ("Самец", feline);
         String expectedPlaceOfLiving ="Нью-Йоркский зоопарк";
 
         String actualPlaceOfLiving = alexLion.getPlaceOfLiving();
@@ -36,7 +36,7 @@ public class AlexLionTest extends TestCase {
 
     @Test
     public void shouldGetNameFriendsAlexReturnsCorrectList() throws Exception {
-        AlexLion alexLion = new AlexLion ("Самец", feline,"Алекс" );
+        AlexLion alexLion = new AlexLion ("Самец", feline);
         List<String> expectedFriendsNameAlex =List.of("зебра Марти", "бегемотиха Глория", "жираф Мелман");
 
         List<String> actualFriendsNameAlex = alexLion.getFriends();

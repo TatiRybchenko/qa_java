@@ -10,8 +10,8 @@ import java.util.List;
 @RunWith(MockitoJUnitRunner.class)
 public class FelineUsesMockitoTest extends TestCase {
 
-    @Mock
-    Feline feline;
+   @Mock
+  private Feline feline;
 
     @Test
     public void shouldGetFamilyReturnsCorrectValueKittens() {
