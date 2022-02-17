@@ -2,12 +2,14 @@ package com.example;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.util.Collections;
 import java.util.List;
+import org.junit.Rule;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionUsesMockitoTest extends TestCase {
@@ -36,4 +38,14 @@ public class LionUsesMockitoTest extends TestCase {
 
         assertEquals("Некорректный вид животного, не Хищник", expectedFood, actualFood);
     }
+
+    @Rule
+    public ExpectedException exceptionRule = ExpectedException.none();
+
+    @Test
+    public void  incorrectSexOfTheLionException() throws Exception {
+        exceptionRule.expect(Exception.class);
+        exceptionRule.expectMessage("Используйте допустимые значения пола животного - самец или самка");
+        Lion lion = new Lion("Мужской", feline);
+     }
 }

@@ -11,11 +11,11 @@ import java.util.List;
 public class FelineUsesMockitoTest extends TestCase {
 
    @Mock
-  private Feline feline;
+   private Feline feline;
 
     @Test
     public void shouldGetFamilyReturnsCorrectValueKittens() {
-        Feline feline = new Feline ();
+        Feline feline = new Feline();
         String expectedFamily ="Кошачьи";
 
         String actualFamily = feline.getFamily();
@@ -26,7 +26,7 @@ public class FelineUsesMockitoTest extends TestCase {
      @Test
     public void shouldEatMeatReturnsCorrectListPredator() throws Exception {
          Feline feline = new Feline ();
-         List<String> expectedMeat =List.of("Животные", "Птицы", "Рыба");
+         List<String> expectedMeat = List.of("Животные", "Птицы", "Рыба");
 
          List<String> actualMeat = feline.eatMeat();
 
